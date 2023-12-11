@@ -6,6 +6,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::view('/', 'index' );
 
-Route::view('/movie', 'show' );
+Route::get('/', [\App\Http\Controllers\MoviesController::class, 'index'])->name('movies.index');
+Route::get('/movie', [\App\Http\Controllers\MoviesController::class, 'show'])->name('movies.show');
